@@ -1,7 +1,8 @@
 package com.atguifu.springboot.controller;
 
-import com.atguifu.springboot.entities.CommonResult;
-import com.atguifu.springboot.entities.Payment;
+
+import com.atguigu.springcloud.entities.CommonResult;
+import com.atguigu.springcloud.entities.Payment;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.client.RestTemplate;
