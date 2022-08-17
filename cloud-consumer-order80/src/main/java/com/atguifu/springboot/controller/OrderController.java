@@ -10,8 +10,8 @@ import org.springframework.web.client.RestTemplate;
 @RestController
 @RequestMapping("/consumer")
 public class OrderController {
-
-    public static final String PAYMENTSRV_URL = "http://127.0.0.1:8001";
+    // 使用注册到Eureka中的应用名
+    public static final String PAYMENTSRV_URL = "http://CLOUD-PAYMENT-SERVICE";
 
     @Autowired
     private RestTemplate restTemplate;
