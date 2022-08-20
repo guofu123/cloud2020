@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 @RestController
 @RequestMapping("/payment")
@@ -67,6 +68,19 @@ public class PaymentController {
             System.out.println(elem.getServiceId() + "\t" + elem.getHost() + "\t" + elem.getPort() + "\t" + elem.getUri());
         }
         return this.discoveryClient;
+    }
+
+    /**
+     * 生产者服务延迟测试
+     * @return
+     */
+    @GetMapping(value = "/feign/timeout")
+    public String paymentFeignTimeOut()
+    {
+        System.out.println("*****paymentFeignTimeOut from port: "+serverPort);
+        //暂停几秒钟线程
+        try { TimeUnit.SECONDS.sleep(3); } catch (InterruptedException e) { e.printStackTrace(); }
+        return serverPort;
     }
 
 }
